@@ -9,11 +9,11 @@
 //    <div class="tab">topic here</div>
 
 
-
+const tabs = document.querySelector('.topics');
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
-    const tabs = document.querySelector('.topics');
+    
     console.log(response.data);
     const topicData = response.data;
     topicData.topics.forEach(item => {
