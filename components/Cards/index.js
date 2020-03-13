@@ -47,8 +47,8 @@ function CardComponent(response) {
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    console.log(response.data);
-    let cardContainer = document.querySelector('.cards-container');
+    console.log(Object.values(response.data.articles));
+    
     let cardData = Object.values(response.data.articles);
     cardData.forEach(x =>{
         x.forEach(item => {
@@ -60,3 +60,5 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .catch(error => {
     console.log('error' + error);
 });
+
+let cardContainer = document.querySelector('.cards-container');
